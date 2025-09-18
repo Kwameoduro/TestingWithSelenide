@@ -1,0 +1,9 @@
+{
+  "validUser": {
+    "username": "standard_user",
+    "password": "secret_sauce"
+  },
+  "cartPageTitle": "Your Cart",
+  "testProduct": "Sauce Labs Backpack"
+}
+
