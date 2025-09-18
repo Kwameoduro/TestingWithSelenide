@@ -1,0 +1,100 @@
+{
+  "validUser": {
+    "username": "standard_user",
+    "password": "secret_sauce"
+  },
+  "informationTitle": "Checkout: Your Information",
+  "overviewTitle": "Checkout: Overview",
+
+  "validInfo": {
+    "firstName": "Kofi",
+    "lastName": "Peter",
+    "postalCode": "00233"
+
+  },
+  "urls": {
+    "homePage": "https://www.saucedemo.com/inventory.html"
+  },
+
+"emptyFields": [
+    { "firstName": "",
+      "lastName": "",
+      "postalCode": "",
+      "expectedError": "Error: First Name is required" },
+
+    { "firstName": "",
+      "lastName": "Peter",
+      "postalCode": "00233",
+      "expectedError": "Error: First Name is required" },
+
+    { "firstName": "Kofi",
+      "lastName": "",
+      "postalCode": "00233",
+      "expectedError": "Error: Last Name is required" },
+
+    { "firstName": "Kofi",
+      "lastName": "Peter",
+      "postalCode": "",
+      "expectedError": "Error: Postal Code is required" },
+
+    { "firstName": "Kofi",
+      "lastName": "",
+      "postalCode": "",
+      "expectedError": "Error: Last Name is required" }
+  ],
+
+  "numericNameFields": [
+    {
+      "firstName": "12345",
+      "lastName": "67890",
+      "postalCode": "00233",
+      "expectedError": "Error: First Name and Last Name cannot be numeric"
+    },
+
+    {
+      "firstName": "12345",
+      "lastName": "Peter",
+      "postalCode": "00233",
+      "expectedError": "Error: First Name cannot be numeric"
+    },
+
+    {
+      "firstName": "Kofi",
+      "lastName": "67890",
+      "postalCode": "12345",
+      "expectedError": "Error: Last Name cannot be numeric"
+    }
+
+  ],
+
+  "specialCharFields": [
+    {
+      "firstName": "@@(*^&!",
+      "lastName": "!@)))**&^$",
+      "postalCode": "%%%*&&",
+      "expectedError": "Error: First Name, Last Name and Postal Code cannot contain special characters"
+    },
+    {
+      "firstName": "Kofi",
+      "lastName": "Peter",
+      "postalCode": "@)(@#!",
+      "expectedError": "Error: Postal Code cannot contain special characters"
+    },
+    {
+      "firstName": "@)(*^^^!",
+      "lastName": "Peter",
+      "postalCode": "00233",
+      "expectedError": "Error: First Name cannot contain special characters"
+    },
+    {
+      "firstName": "Kofi",
+      "lastName": "!@##$%$",
+      "postalCode": "00233",
+      "expectedError": "Error: Last Name cannot contain special characters"
+    }
+  ],
+
+  "successMessage": "Thank you for your order!",
+
+"testProduct": "Sauce Labs Backpack"
+}
