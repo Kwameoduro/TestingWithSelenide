@@ -1,0 +1,21 @@
+{
+  "validUser": {
+    "username": "standard_user",
+    "password": "secret_sauce"
+  },
+  "productsPageTitle": "Products",
+  "testProduct": "Sauce Labs Backpack",
+  "productNameToRemove": "Sauce Labs Backpack",
+  "productToAddFromDetail": "Sauce Labs Backpack",
+  "expectedOrderNameZToA": [
+    "Test.allTheThings() T-Shirt (Red)",
+    "Sauce Labs Onesie",
+    "Sauce Labs Fleece Jacket",
+    "Sauce Labs Bolt T-Shirt",
+    "Sauce Labs Bike Light",
+    "Sauce Labs Backpack"
+  ]
+
+
+}
+
