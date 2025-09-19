@@ -55,9 +55,9 @@ public class CartPage {
         return new CheckoutPage();
     }
 
-    /**
-     * Go back to products page
-     */
+
+     // Go back to the product page
+
     public ProductsPage continueShopping() {
         continueShoppingButton.click();
         return new ProductsPage();
