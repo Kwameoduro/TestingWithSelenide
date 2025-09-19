@@ -37,12 +37,12 @@ public class DataProviderUtil {
         }
     }
 
-    /**
-     * Loads test data from a CSV file into a List of Maps.
-     * Each row = one test data set.
-     * @param fileName Name of the CSV file (e.g., "loginData.csv")
-     * @return List of Map<String, String>
-     */
+
+     // Loads test data from a CSV file into a List of Maps.
+     // Each row = one test data set.
+     // @param fileName Name of the CSV file (e.g., "loginData.csv")
+     // @return List of Map<String, String>
+
     public static List<Map<String, String>> getCsvData(String fileName) {
         List<Map<String, String>> dataList = new ArrayList<>();
 
