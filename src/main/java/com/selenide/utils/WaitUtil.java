@@ -112,14 +112,11 @@ public final class WaitUtil {
         }
     }
 
-    // -------------------------
-    // Collection / count waits
-    // -------------------------
 
-    /**
-     * Waits until the number of elements located by 'locator' equals expectedCount.
-     * Returns true if matched within timeout.
-     */
+
+     // Waits until the number of elements located by 'locator' equals expectedCount.
+     // Returns true if matched within timeout.
+
     public static boolean waitForNumberOfElements(By locator, int expectedCount) {
         return waitForNumberOfElements(locator, expectedCount, null);
     }
