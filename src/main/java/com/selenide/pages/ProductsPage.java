@@ -58,9 +58,8 @@ public class ProductsPage {
     }
 
 
-    /**
-     * Add a product to the cart by product name
-     */
+     // Add a product to the cart by product name
+
     public ProductsPage addProductToCart(String productName) {
         inventoryItems
                 .findBy(text(productName))
