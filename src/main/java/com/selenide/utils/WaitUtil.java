@@ -53,7 +53,7 @@ public final class WaitUtil {
         }
     }
 
-    /** Waits until element is visible and enabled (clickable) and returns it. */
+    // Waits until the element is visible and enabled (clickable) and returns it.
     public static SelenideElement waitForClickable(SelenideElement element) {
         return waitForClickable(element, null);
     }
