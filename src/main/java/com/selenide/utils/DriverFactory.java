@@ -13,7 +13,7 @@ public class DriverFactory {
         String browser = ConfigReader.get("browser", "chrome").toLowerCase();
         boolean headless = ConfigReader.getBoolean("headless", false);
         int timeout = ConfigReader.getInt("timeout", 10);
-        String baseUrl = ConfigReader.get("base.url", "https://www.saucedemo.com/")
+        String baseUrl = ConfigReader.get("baseUrl", "https://www.saucedemo.com/")
                 .replaceAll("/+$", "");
 
         // Browser setup
