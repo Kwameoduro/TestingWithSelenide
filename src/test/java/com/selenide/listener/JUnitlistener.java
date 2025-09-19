@@ -1,7 +1,5 @@
 package com.selenide.listener;
 
-
-
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestWatcher;
 
