@@ -1,0 +1,129 @@
+name: Run Swag Labs UI Tests with Allure
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: 🧪 Run UI Tests
+    runs-on: ubuntu-latest
+    continue-on-error: true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t selenide_ui_tests .
+
+      - name: Run tests inside Docker
+        run: |
+          mkdir -p allure-results
+          docker run --rm \
+            -v ${{ github.workspace }}/allure-results:/app/allure-results \
+            selenide_ui_tests mvn clean test \
+              -Dselenide.headless=true \
+              -Dselenide.browser=chrome \
+              -Dselenide.browserSize=1366x768
+
+      - name: Upload Allure results (with screenshots)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: target/allure-results
+
+  deploy-allure-report:
+    name: 🚀 Deploy Allure Report
+    needs: test
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download Allure results
+        uses: actions/download-artifact@v4
+        with:
+          name: allure-results
+          path: allure-results
+
+      - name: Install Allure CLI
+        run: |
+          wget https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.tgz
+          tar -xzf allure-2.27.0.tgz
+          sudo mv allure-2.27.0 /opt/allure
+          sudo ln -s /opt/allure/bin/allure /usr/local/bin/allure
+
+      - name: Generate Allure report
+        run: allure generate allure-results --clean -o allure-report
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: allure-report
+          publish_branch: gh-pages
+          force_orphan: true
+
+  notify-slack:
+    name: 🔔 Slack Notification
+    needs: [ test, deploy-allure-report ]
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+      - name: Send Slack notification
+        run: |
+          STATUS="${{ needs.test.result }}"
+          if [ "$STATUS" = "success" ]; then
+            COLOR="good"
+            EMOJI="✅"
+            TITLE="*UI Tests Passed*"
+          else
+            COLOR="danger"
+            EMOJI="❌"
+            TITLE="*UI Tests Failed*"
+          fi
+
+          curl -X POST -H 'Content-type: application/json' --data "{
+            \"attachments\": [
+              {
+                \"color\": \"$COLOR\",
+                \"blocks\": [
+                  {
+                    \"type\": \"section\",
+                    \"text\": {
+                      \"type\": \"mrkdwn\",
+                      \"text\": \":rotating_light: $TITLE\n*Status:* $STATUS\"
+                    }
+                  },
+                  {
+                    \"type\": \"section\",
+                    \"fields\": [
+                      {
+                        \"type\": \"mrkdwn\",
+                        \"text\": \"*Repo:*\n$GITHUB_REPOSITORY\"
+                      },
+                      {
+                        \"type\": \"mrkdwn\",
+                        \"text\": \"*Commit:*\n<https://github.com/$GITHUB_REPOSITORY/commit/$GITHUB_SHA%7C$GITHUB_SHA>\"
+                      },
+                      {
+                        \"type\": \"mrkdwn\",
+                        \"text\": \"*Report:*\n<https://nanaquaci.github.io/Phase3-Week7/%7CAllure Report>\"
+                      },
+                      {
+                        \"type\": \"mrkdwn\",
+                        \"text\": \"*Build URL:*\n$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID\"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }" ${{ secrets.SLACK_WEBHOOK_URL }}
