@@ -26,9 +26,8 @@ public class CartPage {
         return cartTitle.getText();
     }
 
-    /**
-     * Get the number of items in the cart
-     */
+      // Get the number of items in the cart
+
     public int getCartItemCount() {
         return cartItems.size();
     }
