@@ -34,9 +34,9 @@ public class ProductsPage {
                 .$("button"); // Button text changes Add → Remove
     }
 
-    /**
-     * Get the number of items shown in the cart badge
-     */
+
+    // Get the number of items shown in the cart badge
+
     public int getCartItemCount() {
         return cartBadge.exists() ? Integer.parseInt(cartBadge.getText()) : 0;
     }
