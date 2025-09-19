@@ -9,52 +9,52 @@ import org.slf4j.LoggerFactory;
 
 import static com.codeborne.selenide.Selenide.$;
 
-/**
- * BasePage - common reusable methods for all page objects.
- */
+
+// BasePage - common reusable methods for all page objects.
+
 public abstract class BasePage {
 
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    // 🔹 Example: every page should define its own unique identifier
+    // every page should define its own unique identifier
     protected abstract SelenideElement getPageIdentifier();
 
-    /**
-     * Verify that the page is loaded by checking its unique identifier.
-     */
+
+     // Verify that the page is loaded by checking its unique identifier.
+
     @Step("Verify page is loaded")
     public boolean isPageLoaded() {
         try {
             getPageIdentifier().shouldBe(Condition.visible);
-            logger.info("✅ Page [{}] loaded successfully.", this.getClass().getSimpleName());
+            logger.info(" Page [{}] loaded successfully.", this.getClass().getSimpleName());
             return true;
         } catch (Exception e) {
-            logger.error("❌ Page [{}] failed to load.", this.getClass().getSimpleName(), e);
+            logger.error(" Page [{}] failed to load.", this.getClass().getSimpleName(), e);
             return false;
         }
     }
 
-    /**
-     * Click on an element.
-     */
+
+     // Click on an element.
+
     @Step("Click element: {element}")
     protected void click(SelenideElement element) {
         element.shouldBe(Condition.visible).click();
         logger.info("Clicked element: {}", element);
     }
 
-    /**
-     * Type text into an input field.
-     */
+
+      // Type text into an input field.
+
     @Step("Type '{text}' into element: {element}")
     protected void type(SelenideElement element, String text) {
         element.shouldBe(Condition.visible).setValue(text);
         logger.info("Typed '{}' into element: {}", text, element);
     }
 
-    /**
-     * Get text from an element.
-     */
+
+     // Get text from an element.
+
     @Step("Get text from element: {element}")
     protected String getText(SelenideElement element) {
         String text = element.shouldBe(Condition.visible).getText();
@@ -62,9 +62,9 @@ public abstract class BasePage {
         return text;
     }
 
-    /**
-     * Check if element is visible.
-     */
+
+     //  Check if the element is visible.
+
     @Step("Check if element is visible: {element}")
     protected boolean isVisible(SelenideElement element) {
         boolean visible = element.is(Condition.visible);
@@ -72,9 +72,9 @@ public abstract class BasePage {
         return visible;
     }
 
-    /**
-     * Wait until element is visible.
-     */
+
+     // Wait until the element is visible.
+
     @Step("Wait for element to be visible: {element}")
     protected void waitForVisibility(SelenideElement element) {
         element.shouldBe(Condition.visible);
