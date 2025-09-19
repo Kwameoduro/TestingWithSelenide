@@ -43,10 +43,9 @@ public class LoginPage {
         return new ProductsPage();
     }
 
-    /**
-     * Attempt login with invalid credentials
-     * Stays on login page, used for negative tests.
-     */
+     // Attempt login with invalid credentials
+     // Stays on login page, used for negative tests.
+
     public LoginPage attemptLogin(String username, String password) {
         setUsername(username);
         setPassword(password);
