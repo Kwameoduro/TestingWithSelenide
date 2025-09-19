@@ -1,9 +1,9 @@
 package com.selenide.utils;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class DriverFactory {
 
@@ -19,10 +19,36 @@ public class DriverFactory {
         // Browser setup
         switch (browser) {
             case "chrome":
+                Configuration.browser = "chrome";
+
+                ChromeOptions options = new ChromeOptions();
+
+                // Always required for Docker
+                options.addArguments("--no-sandbox");
+                options.addArguments("--disable-dev-shm-usage");
+                options.addArguments("--disable-gpu");
+                options.addArguments("--disable-extensions");
+                options.addArguments("--disable-infobars");
+                options.addArguments("--remote-allow-origins=*");
+
+                if (headless) {
+                    options.addArguments("--headless=new");
+                    options.addArguments("--window-size=1920,1080");
+                } else {
+                    options.addArguments("--start-maximized");
+                }
+
+                // Avoid Chrome user data dir conflicts
+                options.addArguments("--user-data-dir=/tmp/chrome-" + System.currentTimeMillis());
+
+                Configuration.browserCapabilities = options;
+                break;
+
             case "firefox":
             case "edge":
                 Configuration.browser = browser;
                 break;
+
             default:
                 System.out.println(" Unsupported browser: " + browser + " → Falling back to Chrome.");
                 Configuration.browser = "chrome";
@@ -36,23 +62,15 @@ public class DriverFactory {
         Configuration.savePageSource = true;
         Configuration.reportsFolder = "target/allure-results";
 
-        // Browser window handling
         if (headless) {
-            // headless → fixed size
             Configuration.browserSize = "1920x1080";
         } else {
-            // local run → maximize later
             Configuration.browserSize = null;
         }
 
-        // Start browser only if not started already
+        // ⚠️ Removed auto-open here
         if (!WebDriverRunner.hasWebDriverStarted()) {
-            Selenide.open("/"); // relative URL, uses baseUrl
-
-            if (!headless) {
-                WebDriver driver = WebDriverRunner.getWebDriver();
-                driver.manage().window().maximize();
-            }
+            // Do NOT open URL here. Let tests decide when to open.
         }
     }
 
