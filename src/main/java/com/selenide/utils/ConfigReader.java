@@ -47,9 +47,9 @@ public class ConfigReader {
         return Integer.parseInt(get(key));
     }
 
-    /**
-     * Gets an int property with a default.
-     */
+
+     // Gets an int property with a default.
+
     public static int getInt(String key, int defaultValue) {
         String value = get(key);
         return (value != null) ? Integer.parseInt(value) : defaultValue;
