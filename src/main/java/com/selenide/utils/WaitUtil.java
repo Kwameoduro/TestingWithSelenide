@@ -18,10 +18,10 @@ import java.util.Map;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
-/**
- * WaitUtil - small utility wrapper around common wait patterns.
- * Uses Selenide's Condition waits where possible and Selenium's WebDriverWait for URL/JS conditions.
- */
+
+ // WaitUtil - small utility wrapper around common wait patterns.
+ // Uses Selenide's Condition waits where possible and Selenium's WebDriverWait for URL/JS conditions.
+
 public final class WaitUtil {
 
     private WaitUtil() { /* utility class */ }
