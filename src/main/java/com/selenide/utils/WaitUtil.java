@@ -164,14 +164,10 @@ public final class WaitUtil {
         }
     }
 
-    // -------------------------
-    // URL / JS / AJAX waits
-    // -------------------------
 
-    /**
-     * Waits until the current URL contains the provided substring.
-     * Returns true if condition met within timeout.
-     */
+     // Waits until the current URL contains the provided substring.
+     // Returns true if condition met within timeout.
+
     public static boolean waitForUrlContains(String substring) {
         return waitForUrlContains(substring, null);
     }
