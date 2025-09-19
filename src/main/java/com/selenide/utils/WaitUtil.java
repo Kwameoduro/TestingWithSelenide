@@ -146,11 +146,7 @@ public final class WaitUtil {
         }
     }
 
-    // -------------------------
-    // Disappear / invisibility
-    // -------------------------
-
-    /** Waits until the element disappears (is not present or not visible). */
+    // Waits until the element disappears (is not present or not visible).
     public static boolean waitForElementToDisappear(SelenideElement element) {
         return waitForElementToDisappear(element, null);
     }
@@ -163,7 +159,6 @@ public final class WaitUtil {
             return false;
         }
     }
-
 
      // Waits until the current URL contains the provided substring.
      // Returns true if condition met within timeout.
