@@ -67,9 +67,9 @@ public class ProductsPage {
         return this;
     }
 
-    /**
-     * Navigate to the shopping cart page
-     */
+
+    // Navigate to the shopping cart page
+
     public CartPage goToCart() {
         cartIcon.click();
         return new CartPage();
