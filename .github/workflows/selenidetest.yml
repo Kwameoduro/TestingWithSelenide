@@ -115,7 +115,7 @@ jobs:
                       },
                       {
                         \"type\": \"mrkdwn\",
-                        \"text\": \"*Report:*\n<https://nanaquaci.github.io/Phase3-Week7/%7CAllure Report>\"
+                        \"text\": \"*Report:*\n<https://Kwameoduro.github.io/TestingWithSelenide/%7CAllure Report>\"
                       },
                       {
                         \"type\": \"mrkdwn\",
