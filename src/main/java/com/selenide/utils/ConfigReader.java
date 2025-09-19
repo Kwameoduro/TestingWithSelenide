@@ -40,9 +40,9 @@ public class ConfigReader {
         return System.getProperty(key, properties.getProperty(key, defaultValue));
     }
 
-    /**
-     * Gets an int property (throws if missing).
-     */
+
+    // Gets an int property (throws if missing).
+
     public static int getInt(String key) {
         return Integer.parseInt(get(key));
     }
