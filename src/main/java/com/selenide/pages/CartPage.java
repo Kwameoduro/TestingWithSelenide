@@ -18,8 +18,6 @@ public class CartPage {
     private final ElementsCollection cartItemNames = $$(".inventory_item_name");
 
 
-
-
      // Verify the Cart page title
 
     public String getCartTitle() {
@@ -47,14 +45,12 @@ public class CartPage {
         return this;
     }
 
-
      // Proceed to checkout
 
     public CheckoutPage proceedToCheckout() {
         checkoutButton.click();
         return new CheckoutPage();
     }
-
 
      // Go back to the product page
 
