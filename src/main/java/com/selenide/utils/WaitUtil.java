@@ -185,10 +185,10 @@ public final class WaitUtil {
         }
     }
 
-    /**
-     * Waits for document.readyState === 'complete' and (if jQuery present) jQuery.active === 0.
-     * Useful for AJAX-heavy pages.
-     */
+
+     // Waits for document.readyState === 'complete' and (if jQuery present) jQuery.active === 0.
+     // Useful for AJAX-heavy pages.
+
     public static boolean waitForAjaxComplete() {
         return waitForAjaxComplete(null);
     }
