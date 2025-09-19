@@ -14,7 +14,7 @@ public class DriverFactory {
         boolean headless = ConfigReader.getBoolean("headless", false);
         int timeout = ConfigReader.getInt("timeout", 10);
         String baseUrl = ConfigReader.get("base.url", "https://www.saucedemo.com/")
-                .replaceAll("/+$", ""); // remove trailing /
+                .replaceAll("/+$", "");
 
         // Browser setup
         switch (browser) {
@@ -24,7 +24,7 @@ public class DriverFactory {
                 Configuration.browser = browser;
                 break;
             default:
-                System.out.println("⚠️ Unsupported browser: " + browser + " → Falling back to Chrome.");
+                System.out.println(" Unsupported browser: " + browser + " → Falling back to Chrome.");
                 Configuration.browser = "chrome";
         }
 
