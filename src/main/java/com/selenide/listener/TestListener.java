@@ -13,10 +13,9 @@ import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * TestListener without JUnit 5 dependencies.
- * Can be called manually from tests or a base test class.
- */
+
+ // Can be called manually from tests or a base test class.
+
 public class TestListener {
 
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
