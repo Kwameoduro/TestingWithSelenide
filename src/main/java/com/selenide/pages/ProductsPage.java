@@ -47,9 +47,9 @@ public class ProductsPage {
         return pageTitle.getText();
     }
 
-    /**
-     * Get number of products listed
-     */
+
+     // Get number of products listed
+
     public String getCartBadgeCount() {
         if (cartBadge.exists()) {
             return cartBadge.shouldBe(Condition.visible).getText();
