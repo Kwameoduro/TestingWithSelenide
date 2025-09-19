@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class CheckoutPage {
 
-    private final SelenideElement infoTitle = $(".title"); // already same selector as overview
+    private final SelenideElement infoTitle = $(".title");
     private final SelenideElement errorMessage = $(".error-message-container");
     private final SelenideElement errorCloseButton = $(".error-button");
     private final SelenideElement cancelBtn = $("button[data-test='cancel']");
@@ -33,9 +33,9 @@ public class CheckoutPage {
     private final SelenideElement completeHeader = $(".complete-header");
     private final SelenideElement backHomeButton = $("#back-to-products");
 
-    /**
-     * Enter checkout information
-     */
+
+      // Enter checkout information
+
     public CheckoutPage enterFirstName(String firstName) {
         firstNameInput.setValue(firstName);
         return this;
