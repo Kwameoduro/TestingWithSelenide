@@ -67,7 +67,6 @@ public class ProductsPage {
         return this;
     }
 
-
     // Navigate to the shopping cart page
 
     public CartPage goToCart() {
@@ -97,9 +96,9 @@ public class ProductsPage {
         return new ProductDetailPage();
     }
 
-    /**
-     * Sort products using visible text option (e.g. "Name (Z to A)")
-     */
+
+    // Sort products using the visible text option (e.g. "Name (Z to A)")
+
     public ProductsPage sortBy(String optionText) {
         sortDropdown.selectOption(optionText);
         return this;
