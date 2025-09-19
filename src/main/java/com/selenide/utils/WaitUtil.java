@@ -84,7 +84,7 @@ public final class WaitUtil {
         }
     }
 
-    /** Waits until element has the given attribute value. */
+    // Waits until the element has the given attribute value.
     public static boolean waitForAttribute(SelenideElement element, String attribute, String value) {
         return waitForAttribute(element, attribute, value, null);
     }
@@ -98,7 +98,7 @@ public final class WaitUtil {
         }
     }
 
-    /** Waits until element has the specified CSS value. */
+    // Waits until the element has the specified CSS value.
     public static boolean waitForCssValue(SelenideElement element, String cssProperty, String expectedValue) {
         return waitForCssValue(element, cssProperty, expectedValue, null);
     }
