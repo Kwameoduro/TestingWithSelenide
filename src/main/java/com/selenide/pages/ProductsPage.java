@@ -41,10 +41,8 @@ public class ProductsPage {
         return cartBadge.exists() ? Integer.parseInt(cartBadge.getText()) : 0;
     }
 
+     // Verify that we are on the Products page
 
-    /**
-     * Verify that we are on the Products page
-     */
     public String getPageTitle() {
         return pageTitle.getText();
     }
