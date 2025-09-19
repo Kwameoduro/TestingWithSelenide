@@ -29,16 +29,15 @@ public class ProductDetailPage {
         return productTitle.getText();
     }
 
-
       // Get product description
 
     public String getProductDescription() {
         return productDescription.getText();
     }
 
-    /**
-     * Get product price
-     */
+
+     //  Get product price
+
     public String getProductPrice() {
         return productPrice.getText();
     }
