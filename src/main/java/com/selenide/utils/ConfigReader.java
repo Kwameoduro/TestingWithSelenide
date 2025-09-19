@@ -25,17 +25,17 @@ public class ConfigReader {
         }
     }
 
-    /**
-     * Gets a property value by key.
-     * System properties (-Dkey=value) override config.properties.
-     */
+
+      // Gets a property value by key.
+      // System properties (-Dkey=value) override config.properties.
+
     public static String get(String key) {
         return System.getProperty(key, properties.getProperty(key));
     }
 
-    /**
-     * Gets a property value with a default if missing.
-     */
+
+     // Gets a property value with a default if missing.
+
     public static String get(String key, String defaultValue) {
         return System.getProperty(key, properties.getProperty(key, defaultValue));
     }
