@@ -42,9 +42,9 @@ public class ProductDetailPage {
         return productPrice.getText();
     }
 
-    /**
-     * Add product to cart
-     */
+
+    // Add product to cart
+
     public ProductDetailPage addToCart() {
         addToCartButton.click();
         return this;
