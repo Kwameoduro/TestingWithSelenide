@@ -22,11 +22,9 @@ public class LoginPage {
 
 
 
-    // ===== Page Actions =====
 
-    /**
-     * Open login page safely
-     */
+    // Open the login page safely
+
     public LoginPage openPage() {
         open(""); // baseUrl defined in config
         loginButton.shouldBe(Condition.visible); // wait for page
