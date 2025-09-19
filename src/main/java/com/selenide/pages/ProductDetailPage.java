@@ -22,9 +22,9 @@ public class ProductDetailPage {
     private final ElementsCollection inventoryItems = $$(".inventory_item");
 
 
-    /**
-     * Get product title
-     */
+
+     // Get product title
+
     public String getProductTitle() {
         return productTitle.getText();
     }
