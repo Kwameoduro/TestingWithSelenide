@@ -38,9 +38,9 @@ public class CartPage {
         return cartItems.findBy(text(productName)).exists();
     }
 
-    /**
-     * Remove a product from the cart by product name
-     */
+
+     // Remove a product from the cart by product name
+
     public CartPage removeProduct(String productName) {
         cartItems.findBy(text(productName))
                 .$("button")
