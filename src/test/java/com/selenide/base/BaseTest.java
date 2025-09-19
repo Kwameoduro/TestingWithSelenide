@@ -9,10 +9,10 @@ import org.junit.jupiter.api.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * BaseTest - common setup & teardown for all tests.
- * Integrates TestListener manually for logging, screenshots, and page source.
- */
+
+  // BaseTest - common setup and teardown for all tests.
+  // Integrates TestListener manually for logging, screenshots, and page source.
+
 public abstract class BaseTest {
 
     protected static final Logger logger = LoggerFactory.getLogger(BaseTest.class);
