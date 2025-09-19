@@ -19,9 +19,9 @@ public class CartPage {
 
 
 
-    /**
-     * Verify the Cart page title
-     */
+
+     // Verify the Cart page title
+
     public String getCartTitle() {
         return cartTitle.getText();
     }
