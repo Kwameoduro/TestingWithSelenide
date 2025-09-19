@@ -60,10 +60,9 @@ public class DataProviderUtil {
             }
 
         } catch (IOException e) {
-            throw new RuntimeException("⚠️ Failed to load CSV test data: " + fileName, e);
+            throw new RuntimeException(" Failed to load CSV test data: " + fileName, e);
         }
 
         return dataList;
     }
-
 }
