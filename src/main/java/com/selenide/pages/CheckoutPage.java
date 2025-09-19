@@ -51,9 +51,9 @@ public class CheckoutPage {
         return this;
     }
 
-    /**
-     * Proceed to next step
-     */
+
+      // Proceed to the next step
+
     public CheckoutPage continueCheckout() {
         continueButton.click();
         return this;
@@ -64,9 +64,9 @@ public class CheckoutPage {
         return overviewTitle.getText();
     }
 
-    /**
-     * Completion
-     */
+
+     // Completion
+
     public String getCompletionMessage() {
         return completeHeader.getText();
     }
