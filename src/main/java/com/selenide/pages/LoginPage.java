@@ -112,7 +112,6 @@ public class LoginPage {
     }
 
 
-
     public boolean isErrorMessageVisibleO() {
         return errorMessageBox.is(Condition.visible);
     }
