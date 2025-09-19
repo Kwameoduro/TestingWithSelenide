@@ -32,9 +32,8 @@ public class CartPage {
         return cartItems.size();
     }
 
-    /**
-     * Verify a product exists in the cart
-     */
+     // Verify a product exists in the cart
+
     public boolean isProductInCart(String productName) {
         return cartItems.findBy(text(productName)).exists();
     }
