@@ -31,10 +31,10 @@ public class LoginPage {
         return this;
     }
 
-    /**
-     * Login with valid credentials
-     * Assumes successful login and waits for products page.
-     */
+
+     //  Login with valid credentials
+     //  Assumes a successful login and waits for product page.
+
     public ProductsPage login(String username, String password) {
         setUsername(username);
         setPassword(password);
