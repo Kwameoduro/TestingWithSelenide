@@ -117,9 +117,9 @@ public class ProductsPage {
                 .collect(Collectors.toList());
     }
 
-    /**
-     * Logs out from the application
-     */
+
+    // Logs out from the application
+
     public LoginPage logout() {
         menuButton.click();
         logoutLink.click();
