@@ -5,10 +5,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-/**
- * ConfigReader loads configuration values from config.properties.
- * Supports overriding via system properties (useful in CI/CD).
- */
+
+ // ConfigReader loads configuration values from config.properties.
+ // Supports overriding via system properties (useful in CI/CD).
+
 public class ConfigReader {
 
     private static final Properties properties = new Properties();
