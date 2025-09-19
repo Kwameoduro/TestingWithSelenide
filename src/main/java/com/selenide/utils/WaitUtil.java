@@ -37,11 +37,9 @@ public final class WaitUtil {
         return Duration.ofSeconds(seconds);
     }
 
-    // -------------------------
-    // Element visibility/clickability
-    // -------------------------
 
-    /** Waits until element is visible and returns it (throws RuntimeException on timeout). */
+
+    // Waits until the element is visible and returns it (throws RuntimeException on timeout).
     public static SelenideElement waitForVisibility(SelenideElement element) {
         return waitForVisibility(element, null);
     }
