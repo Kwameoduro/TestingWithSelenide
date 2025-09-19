@@ -104,9 +104,9 @@ public class ProductsPage {
         return this;
     }
 
-    /**
-     * Get the list of product names in their current order
-     */
+
+     // Get the list of product names in their current order
+
     public List<String> getProductNames() {
         return productNames.texts();
     }
