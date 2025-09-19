@@ -38,7 +38,6 @@ public class CartPage {
         return cartItems.findBy(text(productName)).exists();
     }
 
-
      // Remove a product from the cart by product name
 
     public CartPage removeProduct(String productName) {
@@ -48,9 +47,9 @@ public class CartPage {
         return this;
     }
 
-    /**
-     * Proceed to checkout
-     */
+
+     // Proceed to checkout
+
     public CheckoutPage proceedToCheckout() {
         checkoutButton.click();
         return new CheckoutPage();
