@@ -69,11 +69,8 @@ public final class WaitUtil {
         }
     }
 
-    // -------------------------
-    // Text / attribute / css waits
-    // -------------------------
 
-    /** Waits until element contains the specified text. Returns true if successful. */
+    //  Waits until the element contains the specified text. Returns true if successful.
     public static boolean waitForText(SelenideElement element, String text) {
         return waitForText(element, text, null);
     }
