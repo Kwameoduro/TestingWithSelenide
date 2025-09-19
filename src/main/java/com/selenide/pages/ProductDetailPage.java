@@ -50,22 +50,20 @@ public class ProductDetailPage {
         return this;
     }
 
-    /**
-     * Remove product from cart
-     */
+
+     // Remove product from cart
+
     public ProductDetailPage removeFromCart() {
         removeFromCartButton.click();
         return this;
     }
 
-    /**
-     * Navigate back to products page
-     */
+
+    // Navigate back to product page
+
     public ProductsPage backToProducts() {
         backButton.click();
         return new ProductsPage();
     }
-
-
 
 }
