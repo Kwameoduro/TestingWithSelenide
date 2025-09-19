@@ -130,9 +130,9 @@ public final class WaitUtil {
         }
     }
 
-    /**
-     * Waits until there's at least one element matching locator.
-     */
+
+     // Waits until there's at least one element matching locator.
+
     public static boolean waitForAtLeastOne(By locator) {
         return waitForAtLeastOne(locator, null);
     }
