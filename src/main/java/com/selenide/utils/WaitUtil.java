@@ -214,11 +214,7 @@ public final class WaitUtil {
         }
     }
 
-    // -------------------------
-    // Misc helpers
-    // -------------------------
-
-    /** Convenience: wait for element located by locator to be visible and return it. */
+    // Convenience: wait for the element located by locator to be visible and return it.
     public static SelenideElement waitForVisibility(By locator) {
         return waitForVisibility(locator, null);
     }
