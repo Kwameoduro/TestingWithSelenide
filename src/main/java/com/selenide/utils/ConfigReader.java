@@ -21,7 +21,7 @@ public class ConfigReader {
         try (InputStream input = new FileInputStream("src/test/resources/config/config.properties")) {
             properties.load(input);
         } catch (IOException e) {
-            throw new RuntimeException("⚠️ Could not load config.properties file", e);
+            throw new RuntimeException(" Could not load config.properties file", e);
         }
     }
 
