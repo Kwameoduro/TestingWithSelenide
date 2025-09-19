@@ -55,16 +55,16 @@ public class ConfigReader {
         return (value != null) ? Integer.parseInt(value) : defaultValue;
     }
 
-    /**
-     * Gets a boolean property (throws if missing).
-     */
+
+     // Gets a boolean property (throws if missing).
+
     public static boolean getBoolean(String key) {
         return Boolean.parseBoolean(get(key));
     }
 
-    /**
-     * Gets a boolean property with a default.
-     */
+
+     // Gets a boolean property with a default.
+
     public static boolean getBoolean(String key, boolean defaultValue) {
         String value = get(key);
         return (value != null) ? Boolean.parseBoolean(value) : defaultValue;
