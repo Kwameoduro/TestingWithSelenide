@@ -13,10 +13,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
-/**
- * TestListener: captures screenshots and page sources for failed tests
- * and attaches them to Allure reports.
- */
+
+ // TestListener: captures screenshots and page sources for failed tests
+ // and attaches them to Allure reports.
+
 public class TestListener {
 
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss_SSS");
